@@ -2,6 +2,7 @@
 Program: 
 Given a matrix, find and print the optimal path and individual cell values through the matrix,
 also show the final max sum.
+The movement goes from top to bottom of the matrix, with each move being "down", "down to the right", or "down to the left".
 */
 
 import java.util.*;
@@ -12,12 +13,12 @@ import java.util.Scanner;
 public class MatrixMaxSum {
 
 
-//This method prints the truffle collection path.
+//This method prints the collection path.
 public void printPath(List<List<Integer>> givenMatrix, List<List<Integer>> solutionMatrix, int rows, int columns, int maxColumnIndex) {
    //Note: rows = last INDEX of matrix's final row, columns = last INDEX of matrix's final column
    int[] pathIndices = new int[rows+1];
    
-   //Save the max truffles' column index first, before grabbing all others.
+   //Save the max element's column index first, before grabbing all others.
    pathIndices[0] = maxColumnIndex;
    
    int k = 1;
@@ -63,7 +64,7 @@ public void printPath(List<List<Integer>> givenMatrix, List<List<Integer>> solut
 }
 
 
-//This method finds and returns the maximum truffle value from the given truffle field.
+//This method finds and returns the maximum total value from the given matrix.
 public int maxValue(List<List<Integer>> givenMatrix, List<List<Integer>> solutionMatrix) {
    
    int rows = givenMatrix.size()-1; //last row index
